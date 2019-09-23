@@ -31,7 +31,9 @@
             <h4 id={{i}} >Posted by {{quote.name}}  on {{quote.completeDate|date}}</h4>
             <button (click)='toggleDetails(i)' class="btn btn-primary">Toggle Details</button>
 
-         
+            <p appHighlight *ngIf="highestUpvote()===quote.upvote && quote.upvote>0">{{quote.description}}</p>
+         <p  *ngIf="highestUpvote()!==quote.upvote || quote.upvote===0">{{quote.description}}</p>
+  
           </div>
           <div *ngIf='quote.showDescription'>
             <app-quote-detail  [quote]='quote' (isComplete) = 'deleteQuote($event,i)' (isAdd)='addition($event, i)' (isDown)='down($event,i)'></app-quote-detail>
