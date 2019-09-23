@@ -1,25 +1,21 @@
 
 <div class="container">
-    <h1>My Quotes</h1>
-    <hr>
-    <div class="row">
-      <div class="col-md-6">
-        <div *ngFor='let quote of quotes;let i = index'>
-          <div>
-            <h4 id={{i}} >Posted by {{quote.name}}  on {{quote.completeDate|date}}</h4>
-            <button (click)='toggleDetails(i)' class="btn btn-primary">Toggle Details</button>
-
-            <p appHighlight *ngIf="highestUpvote()===quote.upvote && quote.upvote>0">{{quote.description}}</p>
-         <p  *ngIf="highestUpvote()!==quote.upvote || quote.upvote===0">{{quote.description}}</p>
-  
+        <h1>My Quotes</h1>
+        <hr>
+        <div class="row">
+          <div class="col-md-6">
+            <div *ngFor='let quote of quotes;let i = index'>
+              <div>
+                <h4 id={{i}} >Posted by {{quote.name}}  on {{quote.completeDate|date}}</h4>
+                <button (click)='toggleDetails(i)' class="btn btn-primary">Toggle Details</button>
+              </div>
+              <div *ngIf='quote.showDescription'>
+                <app-quote-detail  [quote]='quote' (isComplete) = 'deleteQuote($event,i)' (isAdd)='addition($event, i)' (isDown)='down($event,i)'></app-quote-detail>
+              </div>
+            </div>
           </div>
-          <div *ngIf='quote.showDescription'>
-            <app-quote-detail  [quote]='quote' (isComplete) = 'deleteQuote($event,i)' (isAdd)='addition($event, i)' (isDown)='down($event,i)'></app-quote-detail>
-          </div>
+          <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
         </div>
-      </div>
-      <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
-    </div>
-  
-   
-  
+      
+       
+      
