@@ -5,6 +5,11 @@
 <!-- <p>This quote will be complete in {{quote.completeDate|dateCount}} days</p> -->
 <!-- <p>This quote was written by {{quote.author}}</p>
 <button (click)= 'quoteDelete(true)'>Delete Quote</button> -->
-<p>{{quote.description}}</p>
+<p>{{quote.quote}}</p>
 <p>Posted {{quote.completeDate|dateCount}} days ago</p>
+<p><span><i class="fas fa-thumbs-up fa-2x mr-3"></i></span>
+<span class="mr-3">{{quote.upvote}}</span>
+<span><i class="fas fa-thumbs-down fa-2x mr-3"></i></span>
+<span class="mr-3">{{quote.downvote}}</span>
+</p>
 <button (click)= 'quoteDelete(true)'>Delete Quote</button>

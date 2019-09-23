@@ -7,9 +7,9 @@ import { Quote } from '../quote';
 })
 export class QuoteComponent implements OnInit {
   quotes:Quote[] = [
-    new Quote(1, 'first', 'Randy', 0, 0, 'Only those who will risk going too far can possibly find out how far one can go',new Date(2019,10,10)),
-    new Quote(2,'Candle', 'Kenneth', 0, 0,'A candle loses nothing when lighting another candle',new Date(2019,11,12)),
-    new Quote(3,'Motivation', 'Reagan', 0, 0, 'Motivation gets you moving and determination keeps you going',new Date(2020,12,12)),
+    new Quote(1, 'first', 'Randy', 0, 0, 'Only those who will risk going too far can possibly find out how far one can go',new Date(2005,10,10)),
+    new Quote(2,'Candle', 'Kenneth', 0, 0,'A candle loses nothing when lighting another candle',new Date(1999,11,12)),
+    new Quote(3,'Motivation', 'Reagan', 0, 0, 'Motivation gets you moving and determination keeps you going',new Date(2000,12,12)),
   ];
   toggleDetails(index){
     this.quotes[index].showDescription = !this.quotes[index].showDescription;
@@ -28,6 +28,14 @@ export class QuoteComponent implements OnInit {
     quote.id = quoteLength+1;
     quote.completeDate = new Date(quote.completeDate)
     this.quotes.push(quote)
+  }
+
+  upvote(i){
+    this.quotes[i].upvote+=1
+  }
+
+  downvote(i){
+    this.quotes[i].downvote+=1
   }
   constructor() { }
 
