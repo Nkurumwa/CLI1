@@ -30,12 +30,13 @@ export class QuoteComponent implements OnInit {
     this.quotes.push(quote)
   }
 
-  upvote(i){
-    this.quotes[i].upvote+=1
+  addition(hey,index){
+    this.quotes[index].upvote+=1
   }
 
-  downvote(i){
-    this.quotes[i].downvote+=1
+  
+  down(hi, index){
+    this.quotes[index].downvote+=1
   }
   constructor() { }
 

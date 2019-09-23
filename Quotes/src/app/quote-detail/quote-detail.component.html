@@ -6,10 +6,12 @@
 <!-- <p>This quote was written by {{quote.author}}</p>
 <button (click)= 'quoteDelete(true)'>Delete Quote</button> -->
 <p>{{quote.quote}}</p>
-<p>Posted {{quote.completeDate|dateCount}} days ago</p>
-<p><span><i class="fas fa-thumbs-up fa-2x mr-3"></i></span>
-<span class="mr-3">{{quote.upvote}}</span>
-<span><i class="fas fa-thumbs-down fa-2x mr-3"></i></span>
-<span class="mr-3">{{quote.downvote}}</span>
+<p>Author: {{quote.author}}</p>
+<p><span (click)='addVote(true)'><i class="fas fa-thumbs-up fa-2x mr-3 text-primary"></i></span>
+<span class="mr-3 " >{{quote.upvote}}</span>
+<span (click)='addDown(true)'><i class="fas fa-thumbs-down fa-2x mr-3 text-primary"></i></span>
+<span class="mr-3 ">{{quote.downvote}}</span>
 </p>
-<button (click)= 'quoteDelete(true)'>Delete Quote</button>
+<div class="form-group">
+    <button class="btn btn-success" (click)= 'quoteDelete(true)'>Delete Quote</button>
+</div>

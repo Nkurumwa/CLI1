@@ -31,6 +31,16 @@ import {Quote} from '../quote'
 export class QuoteDetailComponent implements OnInit {
   @Input() quote:Quote
   @Output() isComplete= new EventEmitter<boolean>();
+  @Output () isAdd = new EventEmitter<boolean>();
+@Output () isDown = new EventEmitter<boolean>();
+ 
+addVote(comp:boolean){
+    this.isAdd.emit(comp);
+  }
+
+  addDown(com:boolean){
+    this.isDown.emit(com);
+  }
 
   quoteComplete(complete:boolean){
   this.isComplete.emit(complete);
