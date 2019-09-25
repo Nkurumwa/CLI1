@@ -1,6 +1,7 @@
 # Quotes
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.4.
+It generates quotes, authors, people who submitted it and also highlight s quotes with highest upvotes and also shows the time the quote was posted.
 
 ## Development server
 
@@ -24,4 +25,4 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 ## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+To get more help on the Angular CLI use `ng help` or contact me through nkurumwa51@gmail.com
