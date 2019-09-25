@@ -3,6 +3,10 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.4.
 It generates quotes, authors, people who submitted it and also highlight s quotes with highest upvotes and also shows the time the quote was posted.
 
+# Author
+
+Ishmael Nkurumwa
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
